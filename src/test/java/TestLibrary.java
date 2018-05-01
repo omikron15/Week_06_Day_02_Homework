@@ -41,14 +41,14 @@ public class TestLibrary {
     }
 
     @Test
-    public void isFull__NotFull(){
-        assertEquals(false, library1.isFull());
+    public void hasSpace__NotFull(){
+        assertEquals(true, library1.libraryHasSpace());
     }
 
     @Test
-    public void isFull__Full(){
+    public void hasSpace__Full(){
         library1.addBook(book5);
-        assertEquals(true, library1.isFull());
+        assertEquals(false, library1.libraryHasSpace());
 
     }
 
