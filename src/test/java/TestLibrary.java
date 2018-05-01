@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.assertEquals;
 
 public class TestLibrary {
@@ -26,7 +28,7 @@ public class TestLibrary {
         library1.addBook(book1);
         library1.addBook(book2);
         library1.addBook(book3);
-        library1.addBook(book4);
+        library1.addBook(book5);
 
     }
 
@@ -64,6 +66,19 @@ public class TestLibrary {
         library1.addBook(book5);
         library1.addBook(book6);
         assertEquals(5, library1.bookCount());
+    }
+
+    @Test
+    public void genreMap(){
+
+        HashMap<String, Integer> genres;
+        genres = library1.getGenres();
+        int val1 = genres.get("Sci-Fi");
+        int val2 = genres.get("Adventure");
+        int val3 = genres.get("Fiction");
+        assertEquals(2, val1);
+        assertEquals(1, val2);
+        assertEquals(1, val3);
     }
 
 
